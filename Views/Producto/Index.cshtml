@@ -1,0 +1,37 @@
+﻿@model List<ProductoViewModel>
+
+<h1>Product List</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Description</td>
+            <td>Price</td>
+            <td>Stock</td>
+            <td>Actions</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Description</td>
+                <td>$ @item.Price</td>
+                <td>@item.Stock</td>
+                <td>
+                    <div>
+                        <a class="btn btn-outline-info" asp-action="Edit" asp-controller="Producto" asp-route-id="@item.Id">Edit</a>
+                        <a class="btn btn-outline-danger" asp-action="Delete" asp-controller="Producto" asp-route-id="@item.Id">Delete</a>
+                        <a class="btn btn-outline-dark" asp-action="Details" asp-controller="Producto" asp-route-id="@item.Id">Details</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a class="btn btn-outline-primary" asp-action="Create" asp-controller="Producto">Add New Product</a>

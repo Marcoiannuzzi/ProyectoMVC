@@ -1,0 +1,17 @@
+﻿@model ProductoViewModel
+
+<h1>Create a new Product</h1>
+
+
+<form class="row g-3 needs-validation" novalidate asp-action="Create">
+
+    <partial name="_FormPartialView" model="@Model"/>
+
+    <div class="col-12">
+        <button class="btn btn-primary" type="submit">Create Product</button>
+   </div>
+
+</form>
+
+
+<a class="btn btn-outline-primary m-2" asp-action="Index" asp-controller="Producto">Go Back</a>

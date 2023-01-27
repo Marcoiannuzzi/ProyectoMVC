@@ -1,0 +1,14 @@
+﻿@model ProductoViewModel
+
+<h1>Edits Product</h1>
+<br />
+
+<form class="row g-3 needs-validation" novalidate asp-action="Edit" asp-route-id="@Model.Id">
+    <partial name="_FormPartialView" model="@Model" />
+    <div class="col-12">
+        <button class="btn btn-primary" type="submit">Edit Product</button>
+    </div>
+</form>
+
+
+<a class="btn btn-outline-primary m-2" asp-action="Index" asp-controller="Producto">Go Back</a>
